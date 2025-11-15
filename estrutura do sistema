@@ -25,3 +25,21 @@ despesas.txt
  docs/
 README.md
   CHANGELOG.md
+
+COMMIT 0.0.2
+src/
+ ├── Main.java
+ ├── controllers/
+ │     ├── DespesaController.java
+ │     ├── PagamentoController.java
+ │     ├── TipoDespesaController.java
+ │     └── UsuarioController.java
+ ├── models/
+ │     ├── Pagavel.java
+ │     ├── Despesa.java
+ │     ├── Transporte.java
+ │     ├── Superfluo.java
+ │     ├── Eventual.java
+ │     └── Usuario.java
+ └── utils/
+       └── Criptografia.java
