@@ -12,5 +12,24 @@ Opções apenas exibindo mensagens (`println`)
 Estrutura de diretórios definida
 Repositório GitHub criado
 
+v0.0.2 – POC / MVP Inicial
+
+Criada separação de responsabilidades (controllers, models, utils)
+
+Implementada arquitetura inicial baseada em POO
+
+Criada interface Pagavel
+
+Criada classe abstrata Despesa
+
+Criadas subclasses: Transporte, Superfluo, Eventual
+
+Criado sistema de criptografia simples (POC)
+
+Implementados controllers com comportamentos mínimos (prints)
+
+Main reorganizado para utilizar controllers
+
+Estruturado o MVP do sistema (ainda sem lógica real)
 
 
