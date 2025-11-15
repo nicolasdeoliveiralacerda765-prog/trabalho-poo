@@ -50,3 +50,50 @@ public class Main {
         sc.close();
     }
 }
+
+import java.util.Scanner;
+import controllers.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        DespesaController despesaController = new DespesaController();
+        PagamentoController pagamentoController = new PagamentoController();
+        TipoDespesaController tipoDespesaController = new TipoDespesaController();
+        UsuarioController usuarioController = new UsuarioController();
+
+        int opcao = 0;
+
+        while (opcao != 7) {
+            System.out.println("=== SISTEMA DE CONTROLE DE DESPESAS ===");
+            System.out.println("1 - Entrar Despesa");
+            System.out.println("2 - Anotar Pagamento");
+            System.out.println("3 - Listar Despesas em Aberto");
+            System.out.println("4 - Listar Despesas Pagas");
+            System.out.println("5 - Gerenciar Tipos de Despesa");
+            System.out.println("6 - Gerenciar Usuários");
+            System.out.println("7 - Sair");
+            System.out.print("Escolha uma opção: ");
+
+            opcao = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcao) {
+                case 1 -> despesaController.criarDespesaPOC();
+                case 2 -> pagamentoController.registrarPagamentoPOC();
+                case 3 -> despesaController.listarAbertoPOC();
+                case 4 -> despesaController.listarPagasPOC();
+                case 5 -> tipoDespesaController.menuPOC();
+                case 6 -> usuarioController.menuPOC();
+                case 7 -> System.out.println(">> Saindo...");
+                default -> System.out.println("Opção inválida!");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
