@@ -97,3 +97,122 @@ public class Main {
     }
 }
 
+package models;
+
+public interface Pagavel {
+    void registrarPagamento(double valor, String data);
+}
+
+package models;
+
+public abstract class Despesa implements Pagavel {
+    protected String descricao;
+    protected double valor;
+    protected String dataVencimento;
+    protected String categoria;
+    protected boolean paga = false;
+
+    public Despesa(String descricao, double valor, String dataVencimento, String categoria) {
+        this.descricao = descricao;
+        this.valor = valor;
+        this.dataVencimento = dataVencimento;
+        this.categoria = categoria;
+    }
+package models;
+
+public class Transporte extends Despesa {
+
+    public Transporte(String descricao, double valor, String dataVencimento) {
+        super(descricao, valor, dataVencimento, "Transporte");
+    }
+
+    @Override
+    public void exibirDetalhes() {
+        System.out.println("[Transporte] " + descricao + " - R$" + valor);
+    }
+}
+
+
+
+    public abstract void exibirDetalhes();
+
+    @Override
+    public void registrarPagamento(double valor, String data) {
+        System.out.println("Pagamento registrado (POC).");
+        this.paga = true;
+    }
+}
+
+package models;
+
+public class Superfluo extends Despesa {
+
+    public Superfluo(String descricao, double valor, String dataVencimento) {
+        super(descricao, valor, dataVencimento, "Supérfluo");
+    }
+
+    @Override
+    public void exibirDetalhes() {
+        System.out.println("[Supérfluo] " + descricao + " - R$" + valor);
+    }
+}
+
+package models;
+
+public class Eventual extends Despesa {
+
+    public Eventual(String descricao, double valor, String dataVencimento) {
+        super(descricao, valor, dataVencimento, "Eventual");
+    }
+
+    @Override
+    public void exibirDetalhes() {
+        System.out.println("[Eventual] " + descricao + " - R$" + valor);
+    }
+}
+
+package controllers;
+
+public class DespesaController {
+
+    public void criarDespesaPOC() {
+        System.out.println(">> [POC] Criar despesa");
+    }
+package controllers;
+
+public class PagamentoController {
+    public void registrarPagamentoPOC() {
+        System.out.println(">> [POC] Registrar pagamento");
+    }
+}
+package controllers;
+
+public class TipoDespesaController {
+
+    public void menuPOC() {
+        System.out.println(">> [POC] Gerenciar Tipos de Despesa");
+    }
+
+}
+
+
+    public void listarAbertoPOC() {
+        System.out.println(">> [POC] Listar despesas em aberto");
+    }
+
+    public void listarPagasPOC() {
+        System.out.println(">> [POC] Listar despesas pagas");
+    }
+
+}
+package controllers;
+
+public class UsuarioController {
+
+    public void menuPOC() {
+        System.out.println(">> [POC] Gerenciar Usuários");
+    }
+
+}
+
+
